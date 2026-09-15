@@ -5,22 +5,13 @@ services:
     restart: always
     environment:
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: Min4ik767
-      POSTGRES_DB: cashe
+      POSTGRES_PASSWORD: #тут могла быть ваша реклама
+      POSTGRES_DB: postgres
       PGDATA: /var/lib/postgresql/data
     ports:
       - "5432:5432"
     volumes:
       - pgdata:/var/lib/postgresql/data
-
-  redis:
-    image: redis:alpine
-    container_name: redis
-    restart: always
-    ports:
-      - "6379:6379"
-    volumes:
-      - redisdata:/data
 
 volumes:
   pgdata:
